@@ -1,0 +1,17 @@
+.card-container{
+    width:100%;
+    display: flex;
+    flex-wrap:wrap;
+    gap:32px;
+    justify-content: center;
+    padding: 32px 32px;
+}
+
+.card-image{
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 10px;
+}
+
+.card-text{
+    padding: 8px;
+}

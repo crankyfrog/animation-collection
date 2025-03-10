@@ -1,0 +1,22 @@
+.carousel-container {
+    max-width: 1440px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: rgb(239, 242, 245);
+  }
+  
+  .logo-container {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping */
+    gap: 0px;  /* No gap between items */
+    will-change: transform; /* Optimizes animation performance */
+  }
+  
+  .logo {
+    flex-shrink: 0; /* Prevents shrinking */
+    height: auto;   /* Maintain aspect ratio */
+    opacity: 0.15;
+  }
+  
