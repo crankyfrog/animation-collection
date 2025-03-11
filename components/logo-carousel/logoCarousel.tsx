@@ -34,19 +34,20 @@ export default function LogoCarousel() {
 
       const totalWidth = firstItemWidth * logos.length;
 
-      // Kill previous animations before starting a new one
       gsap.killTweensOf(carousel);
 
-      // GSAP infinite scrolling animation
       gsap.fromTo(
         carousel,
         { x: 0 },
         {
           x: `-${totalWidth}px`,
           ease: "none",
-          duration: totalWidth / SPEED, // Ensures constant speed regardless of screen width
+          duration: totalWidth / SPEED,
           repeat: -1,
-          onRepeat: () => gsap.set(carousel, { x: 0 }), // Instantly reset position to loop seamlessly
+          onRepeat: () => {
+            gsap.set(carousel, { x: 0 });
+            return undefined;
+          },
         }
       );
     };
