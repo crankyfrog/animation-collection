@@ -5,19 +5,15 @@ import { gsap } from "gsap";
 import Image from "next/image";
 import "./logoCarousel.css";
 
-const logos = [
-  "/logos/logo.png",
-  "/logos/logo.png",
-  "/logos/logo.png",
-  "/logos/logo.png",
-  "/logos/logo.png",
-  "/logos/logo.png"
-];
+interface LogoCarouselProps{
+  photos: string[]
+  speed: number
+}
 
-export default function LogoCarousel() {
+export default function LogoCarousel({photos, speed}:LogoCarouselProps) {
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const [itemWidth, setItemWidth] = useState(0);
-  const SPEED = 100; // Speed in pixels per second
+  const SPEED = speed /* pixels per second */
 
   useEffect(() => {
     if (!carouselRef.current) return;
@@ -32,7 +28,7 @@ export default function LogoCarousel() {
       const firstItemWidth = items[0].offsetWidth;
       setItemWidth(firstItemWidth);
 
-      const totalWidth = firstItemWidth * logos.length;
+      const totalWidth = firstItemWidth * photos.length;
 
       gsap.killTweensOf(carousel);
 
@@ -61,7 +57,7 @@ export default function LogoCarousel() {
     <div className="carousel-container">
       <div ref={carouselRef} className="logo-container">
         {/* Duplicate items for seamless looping */}
-        {[...logos, ...logos].map((src, index) => (
+        {[...photos, ...photos].map((src, index) => (
           <Image
             key={index}
             src={src}
