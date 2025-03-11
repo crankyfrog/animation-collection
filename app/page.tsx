@@ -9,7 +9,6 @@ export default function Home() {
       <Header/>
       <div className="main-area">
         <Aside/>
-        <p></p>
         <main>
           <PageList/>
         </main>
