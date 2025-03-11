@@ -1,0 +1,11 @@
+aside{
+    width:15%;
+}
+
+aside ul{
+    padding: 8px 8px;
+}
+
+aside ul li{
+    padding:8px 16px;
+}
